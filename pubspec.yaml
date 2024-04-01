@@ -48,27 +48,10 @@ scripts:
             $before: echo "Build runner success"
             $script: flutter build apk -t lib/main_dev.dart  --flavor=dev
             $after: echo "Apk Success"
-          synkrato_dev:
-            $before: echo "Build runner success"
-            $script: flutter build apk -t lib/main_synkrato.dart  --flavor=synkrato
-            $after: echo "Apk Success"
-          prod:
-            $before: echo "Build runner success"
-            $script: flutter build appbundle -t lib/main_prod.dart  --flavor=prod
-            $after: echo "Apk Success"
-          synkrato:
-            $before: echo "Build runner success"
-            $script: flutter build appbundle -t lib/main_synkrato.dart  --flavor=synkrato
-            $after: echo "Apk Success"
         ios:
-          prod:
-            flutter build ipa -t lib/main_prod.dart  --flavor=prod
           dev:
             flutter build ipa -t lib/main_dev.dart  --flavor=dev
   android_apk: $clean generator build android dev
-  synkrato_apk: $clean generator build android synkrato_dev
-  android_prod_bundle: $clean generator build android prod
-  synkrato_prod_bundle: $clean generator build android synkrato
   ios_ipa: $clean generator build ios prod
   build: $clean generator setup
 
