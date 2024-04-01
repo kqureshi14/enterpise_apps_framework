@@ -1,0 +1,42 @@
+import 'dart:convert';
+
+import 'package:framework/services/network/network_service.dart';
+import 'package:framework/services/storage/storage_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:framework/setup.dart';
+import 'package:framework/constants/constants.dart';
+
+import 'package:framework/helpers/connectivity_helper.dart';
+import 'package:framework/screens/net_bloc/network_event.dart';
+import 'package:framework/screens/net_bloc/network_state.dart';
+
+class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
+  factory NetworkBloc() => _instance;
+
+  NetworkBloc._() : super(NetworkInitial()) {
+    on<NetworkObserve>(_observe);
+    on<NetworkNotify>(_notifyStatus);
+  }
+
+  static final NetworkBloc _instance = NetworkBloc._();
+  final ConnectivityHelper _connectivity = ConnectivityHelper.getInstance();
+
+  void _observe(event, emit) {
+    _connectivity.connectionListener.listen((bool hasConnection) {
+      if (hasConnection) {
+        add(NetworkNotify(isConnected: true));
+      } else {
+        add(NetworkNotify());
+      }
+    });
+  }
+
+  void _notifyStatus(NetworkNotify event, emit) async {
+    if (event.isConnected) {
+      emit(NetworkSuccess());
+    } else {
+      emit(NetworkFailure());
+    }
+  }
+}
