@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:framework/screens/custom_form/widgets/exto_field_option.dart';
+import 'package:framework/screens/custom_form/widgets/gt_field_option.dart';
 import 'package:framework/services/services.dart';
 
 import '../../services/renderer/field_renderer_helpers.dart';
@@ -16,7 +16,7 @@ class GTRadio<T> extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<ExtoFieldOption<T>> items;
+  final List<GTFieldOption<T>> items;
   final T? value;
   final ValueChanged<T?> onChanged;
   final FieldOrientation orientation;

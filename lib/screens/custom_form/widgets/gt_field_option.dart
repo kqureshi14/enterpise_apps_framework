@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:framework/ui_kit/widgets/gt_text.dart';
 
-class ExtoFieldOption<T> extends StatelessWidget {
-  const ExtoFieldOption({
+class GTFieldOption<T> extends StatelessWidget {
+  const GTFieldOption({
     required this.optionData,
     this.child,
     Key? key,

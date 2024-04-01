@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:framework/ui_kit/gt_ui_kit.dart';
 
-class ExtoListItem extends StatelessWidget {
-  const ExtoListItem({
+class GTListItem extends StatelessWidget {
+  const GTListItem({
     required String title,
     String? subTitle,
     TextStyle? titleStyle,
