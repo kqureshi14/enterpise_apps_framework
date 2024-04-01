@@ -72,20 +72,20 @@ class Toaster {
                     toastType: toastType,
                     message: message,
                   )
-                : Flash.bar(
-                    horizontalDismissDirection: dismissByHorizontalDrag
-                        ? HorizontalDismissDirection.horizontal
-                        : null,
+                : FlashBar(
+                    // horizontalDismissDirection: dismissByHorizontalDrag
+                    //     ? HorizontalDismissDirection.horizontal
+                    //     : null,
                     behavior: isPositionFixed
                         ? FlashBehavior.fixed
                         : FlashBehavior.floating,
                     position: position ?? FlashPosition.bottom,
-                    enableVerticalDrag: enableVerticalDismiss,
-                    borderRadius: _appTheme.defaultBorderRadius,
+                    // enableVerticalDrag: enableVerticalDismiss,
+                    // borderRadius: _appTheme.defaultBorderRadius,
                     backgroundColor: toastDecorationData.backgroundColor,
                     controller: controller,
                     margin: const EdgeInsets.all(_toastMargin),
-                    child: _buildToastContent(
+                    content: _buildToastContent(
                       appTheme: _appTheme,
                       controller: controller,
                       decorationData: toastDecorationData,
@@ -108,10 +108,10 @@ class Toaster {
     required ToastType toastType,
     required String message,
   }) {
-    return Flash.bar(
+    return FlashBar(
       controller: controller,
       backgroundColor: appTheme.colors.transparent,
-      child: Container(
+      content: Container(
         margin: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 40.0),
         decoration: BoxDecoration(
           color: appTheme.colors.secondaryBackground,
@@ -205,6 +205,7 @@ class Toaster {
                 decorationData: decorationData,
               )
             : null,
+        controller: controller,
       ),
     );
   }

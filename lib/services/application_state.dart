@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:framework/setup.dart';
 import 'package:flutter/material.dart';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -108,9 +107,7 @@ class ApplicationService extends Cubit<ApplicationState> {
     final projectId = _storage.readString(key: PreferencesKeys.projectId);
     final tenantId = _storage.readString(key: PreferencesKeys.sTenantId);
     final workspaceId = _storage.readString(key: PreferencesKeys.sWorkspaceId);
-    final terminologyInfo = _storage.readString(
-      key: PreferencesKeys.sCustomerTerminology,
-    );
+
     final customerTokenLegacy = _storage.readString(
       key: PreferencesKeys.sCustomerTokenLegacy,
     );

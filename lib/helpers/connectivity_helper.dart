@@ -5,6 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 class ConnectivityHelper {
   ConnectivityHelper._internal();
+
   //This creates the single instance by calling the `_internal` constructor specified below
   static final _singleton = ConnectivityHelper._internal();
 
@@ -17,6 +18,7 @@ class ConnectivityHelper {
 
   //Add this Stream that return true if internet connections is availbale
   final _connectionStream = StreamController<bool>();
+
   //Add this to access to _connectionSteam with other classes
   Stream<bool> get connectionListener => _connectionStream.stream;
 
@@ -27,9 +29,12 @@ class ConnectivityHelper {
   //to be sure that no other liestener is being created.
   bool _hasListener = false;
 
+  List<ConnectivityResult> _connectionStatus = [ConnectivityResult.none];
+
   //Functiona to check if there is any internet connection available
   Future<bool> checkHasConnection() async {
     final connection = await _connectivity.checkConnectivity();
+    _updateConnectionStatus(connection);
     return connection != ConnectivityResult.none;
   }
 
@@ -47,8 +52,12 @@ class ConnectivityHelper {
 
   void subscribe(void Function(ConnectivityResult) callback) {
     _connectivitySubscription ??= _connectivity.onConnectivityChanged.listen(
-      callback,
+      _updateConnectionStatus,
     );
+  }
+
+  Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
+    _connectionStatus = result;
   }
 
   //The test to actually see if there is a connection

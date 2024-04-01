@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'package:camera/camera.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http_interceptor/http_interceptor.dart';
@@ -18,7 +17,7 @@ import 'package:framework/helpers/connectivity_helper.dart';
 
 
 final getIt = GetIt.instance;
-List<CameraDescription> cameras = [];
+
 late final AppConfig appConfig;
 
 Future<dynamic> configureDependencies(AppConfig config) async {
@@ -27,11 +26,6 @@ Future<dynamic> configureDependencies(AppConfig config) async {
   var connectionStatus = ConnectivityHelper.getInstance();
   connectionStatus.initialize();
 
-  try {
-    cameras = await availableCameras();
-  } on Exception {
-    cameras.clear();
-  }
   appConfig = config;
   HttpOverrides.global = DevHttpOverrides(); // to ignore ssl certification
   return $initGetIt(getIt);

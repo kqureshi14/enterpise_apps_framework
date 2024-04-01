@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:flutter_jailbreak_detection/flutter_jailbreak_detection.dart';
 
 import 'package:framework/app_config.dart';
 import 'package:framework/base/base.dart';

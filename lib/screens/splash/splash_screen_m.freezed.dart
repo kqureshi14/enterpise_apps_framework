@@ -12,7 +12,7 @@ part of 'splash_screen_m.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SplashScreenState {
@@ -89,22 +89,22 @@ class _$SplashScreenStateCopyWithImpl<$Res, $Val extends SplashScreenState>
 }
 
 /// @nodoc
-abstract class _$$InitializedCopyWith<$Res>
+abstract class _$$InitializedImplCopyWith<$Res>
     implements $SplashScreenStateCopyWith<$Res> {
-  factory _$$InitializedCopyWith(
-          _$Initialized value, $Res Function(_$Initialized) then) =
-      __$$InitializedCopyWithImpl<$Res>;
+  factory _$$InitializedImplCopyWith(
+          _$InitializedImpl value, $Res Function(_$InitializedImpl) then) =
+      __$$InitializedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isRootedDevice});
 }
 
 /// @nodoc
-class __$$InitializedCopyWithImpl<$Res>
-    extends _$SplashScreenStateCopyWithImpl<$Res, _$Initialized>
-    implements _$$InitializedCopyWith<$Res> {
-  __$$InitializedCopyWithImpl(
-      _$Initialized _value, $Res Function(_$Initialized) _then)
+class __$$InitializedImplCopyWithImpl<$Res>
+    extends _$SplashScreenStateCopyWithImpl<$Res, _$InitializedImpl>
+    implements _$$InitializedImplCopyWith<$Res> {
+  __$$InitializedImplCopyWithImpl(
+      _$InitializedImpl _value, $Res Function(_$InitializedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +112,7 @@ class __$$InitializedCopyWithImpl<$Res>
   $Res call({
     Object? isRootedDevice = null,
   }) {
-    return _then(_$Initialized(
+    return _then(_$InitializedImpl(
       isRootedDevice: null == isRootedDevice
           ? _value.isRootedDevice
           : isRootedDevice // ignore: cast_nullable_to_non_nullable
@@ -123,8 +123,8 @@ class __$$InitializedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Initialized implements Initialized {
-  const _$Initialized({this.isRootedDevice = false});
+class _$InitializedImpl implements Initialized {
+  const _$InitializedImpl({this.isRootedDevice = false});
 
   @override
   @JsonKey()
@@ -136,10 +136,10 @@ class _$Initialized implements Initialized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Initialized &&
+            other is _$InitializedImpl &&
             (identical(other.isRootedDevice, isRootedDevice) ||
                 other.isRootedDevice == isRootedDevice));
   }
@@ -150,8 +150,8 @@ class _$Initialized implements Initialized {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializedCopyWith<_$Initialized> get copyWith =>
-      __$$InitializedCopyWithImpl<_$Initialized>(this, _$identity);
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
+      __$$InitializedImplCopyWithImpl<_$InitializedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,12 +211,12 @@ class _$Initialized implements Initialized {
 }
 
 abstract class Initialized implements SplashScreenState {
-  const factory Initialized({final bool isRootedDevice}) = _$Initialized;
+  const factory Initialized({final bool isRootedDevice}) = _$InitializedImpl;
 
   @override
   bool get isRootedDevice;
   @override
   @JsonKey(ignore: true)
-  _$$InitializedCopyWith<_$Initialized> get copyWith =>
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

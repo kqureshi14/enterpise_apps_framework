@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:icons_plus/icons_plus.dart';
 
-import 'package:framework/app_config.dart';
 import 'package:framework/base/base.dart';
 import 'package:framework/constants/constants.dart';
 import 'package:framework/services/services.dart';

@@ -57,13 +57,14 @@ scripts:
 
 dependencies:
   auto_route: ^8.0.3
+  connectivity_plus: ^6.0.1
   cupertino_icons: 1.0.5
   device_info_plus: 9.1.0
   dropdown_search: 5.0.5
   easy_search_bar: 2.3.1
   equatable: 2.0.5
   file_picker: 5.3.2
-  flash: 2.0.3
+  flash: 3.1.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5

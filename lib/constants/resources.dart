@@ -1,5 +1,5 @@
 abstract class Resources {
-  static const appIcon = 'assets/images/abc.svg';
+  static const appIcon = 'assets/images/favourite.svg';
   static const scanIcon = 'assets/images/scan.svg';
   static const shieldIcon = 'assets/images/shield.svg';
   static const userProfileIcon = 'assets/images/person.svg';

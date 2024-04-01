@@ -12,7 +12,7 @@ part of 'login_screen_m.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginScreenState {
@@ -131,11 +131,11 @@ class _$LoginScreenStateCopyWithImpl<$Res, $Val extends LoginScreenState>
 }
 
 /// @nodoc
-abstract class _$$InitializedCopyWith<$Res>
+abstract class _$$InitializedImplCopyWith<$Res>
     implements $LoginScreenStateCopyWith<$Res> {
-  factory _$$InitializedCopyWith(
-          _$Initialized value, $Res Function(_$Initialized) then) =
-      __$$InitializedCopyWithImpl<$Res>;
+  factory _$$InitializedImplCopyWith(
+          _$InitializedImpl value, $Res Function(_$InitializedImpl) then) =
+      __$$InitializedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -148,11 +148,11 @@ abstract class _$$InitializedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitializedCopyWithImpl<$Res>
-    extends _$LoginScreenStateCopyWithImpl<$Res, _$Initialized>
-    implements _$$InitializedCopyWith<$Res> {
-  __$$InitializedCopyWithImpl(
-      _$Initialized _value, $Res Function(_$Initialized) _then)
+class __$$InitializedImplCopyWithImpl<$Res>
+    extends _$LoginScreenStateCopyWithImpl<$Res, _$InitializedImpl>
+    implements _$$InitializedImplCopyWith<$Res> {
+  __$$InitializedImplCopyWithImpl(
+      _$InitializedImpl _value, $Res Function(_$InitializedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +165,7 @@ class __$$InitializedCopyWithImpl<$Res>
     Object? rememberMe = null,
     Object? errorMessage = null,
   }) {
-    return _then(_$Initialized(
+    return _then(_$InitializedImpl(
       appVersion: null == appVersion
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
@@ -196,8 +196,8 @@ class __$$InitializedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Initialized implements Initialized {
-  const _$Initialized(
+class _$InitializedImpl implements Initialized {
+  const _$InitializedImpl(
       {required this.appVersion,
       required this.baseURL,
       required this.baseUrlIndex,
@@ -226,10 +226,10 @@ class _$Initialized implements Initialized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Initialized &&
+            other is _$InitializedImpl &&
             (identical(other.appVersion, appVersion) ||
                 other.appVersion == appVersion) &&
             (identical(other.baseURL, baseURL) || other.baseURL == baseURL) &&
@@ -249,8 +249,8 @@ class _$Initialized implements Initialized {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializedCopyWith<_$Initialized> get copyWith =>
-      __$$InitializedCopyWithImpl<_$Initialized>(this, _$identity);
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
+      __$$InitializedImplCopyWithImpl<_$InitializedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -325,7 +325,7 @@ abstract class Initialized implements LoginScreenState {
       required final int baseUrlIndex,
       required final bool isBusy,
       final bool rememberMe,
-      final String errorMessage}) = _$Initialized;
+      final String errorMessage}) = _$InitializedImpl;
 
   @override
   String get appVersion;
@@ -341,6 +341,6 @@ abstract class Initialized implements LoginScreenState {
   String get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$InitializedCopyWith<_$Initialized> get copyWith =>
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

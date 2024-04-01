@@ -7,7 +7,6 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:framework/base/base.dart';
 import 'package:framework/constants/constants.dart';
-import 'package:framework/app_config.dart';
 import 'package:framework/services/services.dart';
 import 'package:framework/screens/splash/splash_screen_m.dart';
 import 'package:framework/screens/splash/splash_screen_vm.dart';
