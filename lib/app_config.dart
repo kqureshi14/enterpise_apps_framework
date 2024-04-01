@@ -12,7 +12,4 @@ class AppConfig {
 
 enum Flavor {
   dev,
-  prod,
-  qa,
-  synkrato,
 }
